@@ -1,11 +1,14 @@
 {
   "compilerOptions": {
     "paths": {
-      "@components": [
+      "@components/*": [
         "./src/components/*"
       ],
-      "@containers": [
-        "./src/containers"
+      "@containers/*": [
+        "./src/containers/*"
+      ],
+      "@models/*": [
+        "./src/models/*"
       ]
     }
   }
