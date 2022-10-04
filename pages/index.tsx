@@ -1,10 +1,11 @@
-import type { NextPage } from "next"
-import LoginPageContainer from "../src/containers/login"
+import LoginPageContainer from "@containers/login"
 
-const Home: NextPage = () => {
+const Home = () => {
   return (
-    <LoginPageContainer/>
+    <LoginPageContainer />
   )
 }
 
 export default Home
+
+Home.emptyLayout = true
