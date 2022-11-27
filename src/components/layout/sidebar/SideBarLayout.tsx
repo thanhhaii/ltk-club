@@ -2,33 +2,33 @@ import React from "react"
 import { BookOutlined, DropboxOutlined, UserOutlined } from "@ant-design/icons"
 import { Layout, Menu, MenuProps } from "antd"
 import pathNameHelper from "../../../helpers/pageHelpers/pathNameHelper"
-import CustomLink from "@components/link/Link"
+import Link from "next/link"
 
 const menuProps: MenuProps["items"] = [
 	{
 		key: pathNameHelper.manage.members,
 		label: (
-			<CustomLink href={pathNameHelper.manage.members}>
+			<Link href={pathNameHelper.manage.members}>
 				Danh sách thành viên
-			</CustomLink>
+			</Link>
 		),
 		icon: <UserOutlined />,
 	},
 	{
 		key: pathNameHelper.manage.papers,
 		label: (
-			<CustomLink href={pathNameHelper.manage.papers}>
+			<Link href={pathNameHelper.manage.papers}>
 				Giấy tờ
-			</CustomLink>
+			</Link>
 		),
 		icon: <BookOutlined />,
 	},
 	{
 		key: pathNameHelper.manage.storage,
 		label: (
-			<CustomLink href={pathNameHelper.manage.storage}>
+			<Link href={pathNameHelper.manage.storage}>
 				Thông tin lưu trữ
-			</CustomLink>
+			</Link>
 		),
 		icon: <DropboxOutlined />,
 	},

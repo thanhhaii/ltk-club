@@ -33,7 +33,7 @@ const LoginPageContainer: React.FC<LoginPageProps> = () => {
                   { required: true, message: 'Tên tài khoản không được để trống' }
                 ]}
                 required>
-                <FormInput
+                <Input
                   size="large"
                   placeholder="Số điện thoại / Email"
                 />
@@ -48,13 +48,12 @@ const LoginPageContainer: React.FC<LoginPageProps> = () => {
                   { required: true, message: 'Mật khẩu không được để trống' }
                 ]}
               >
-                <Input.Password size="large" className="!rounded-md" placeholder="Mật khẩu" />
+                <Input.Password size="large" autoComplete="false" placeholder="Mật khẩu" />
               </Form.Item>
             </Col>
             <Col span={24} className="pt-2">
               <Button
                 type="primary"
-                className="w-full !rounded-md"
                 icon={<LoginOutlined />}
                 htmlType="submit"
                 size="large">

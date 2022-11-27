@@ -1,11 +1,11 @@
 import type { AppProps } from 'next/app';
-import DashboardLayout from "@components/layout/dashboard/DashboardLayout"
+import { useCallback, useMemo } from 'react';
+import { NextPage } from 'next';
 
 // Styles
 import '../styles/globals.css';
-import 'antd/dist/antd.css';
-import { NextPage } from 'next';
-import { useCallback, useMemo } from 'react';
+import 'antd/dist/reset.css';
+import DashboardLayout from "@components/layout/dashboard/DashboardLayout"
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   emptyLayout?: boolean
@@ -26,7 +26,7 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
         <Component {...pageProps} />
       </DashboardLayout>
     )
-  }, [])
+  }, [Component])
 
   return (
     <>
