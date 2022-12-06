@@ -5,6 +5,7 @@ import FormInput from "@components/formComponents/input"
 import IconClub from "public/images/logocaulacbo.png";
 import { LoginOutlined } from '@ant-design/icons';
 import { LoginFormProps } from '@models/form/login';
+import { GoogleLogin } from '@react-oauth/google';
 
 
 export type LoginPageProps = {
@@ -66,6 +67,13 @@ const LoginPageContainer: React.FC<LoginPageProps> = () => {
                   <span className="font-medium text-blue-500 cursor-pointer">Liên hệ Admin!</span>
                 </p>
               </div>
+            </Col>
+            <Col span={24}>
+              <GoogleLogin
+                onSuccess={(...value) => { console.log(value) }}
+                // onError={handleSignInGoogleFailed}
+                size="large"
+              />
             </Col>
           </Row>
         </Form>
