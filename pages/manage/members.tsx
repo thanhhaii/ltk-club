@@ -1,9 +1,9 @@
-import MemberContainer from "@containers/manage/members/MemberContainer"
+import MemberContainer from '@containers/manage/members/MemberContainer';
 
 const ManageMemberPage = () => {
-	return (
-		<MemberContainer />
-	)
-}
+  return (
+    <MemberContainer />
+  );
+};
 
-export default ManageMemberPage
+export default ManageMemberPage;

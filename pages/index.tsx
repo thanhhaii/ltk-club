@@ -1,11 +1,11 @@
-import LoginPageContainer from "@containers/login"
+import LoginPageContainer from '@containers/login';
 
 const Home = () => {
   return (
-    <LoginPageContainer />
-  )
-}
+	  <LoginPageContainer />
+  );
+};
 
-export default Home
+export default Home;
 
-Home.emptyLayout = true
+Home.emptyLayout = true;

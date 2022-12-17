@@ -1,15 +1,21 @@
 {
-  "compilerOptions": {
-    "paths": {
-      "@components/*": [
-        "./src/components/*"
-      ],
-      "@containers/*": [
-        "./src/containers/*"
-      ],
-      "@models/*": [
-        "./src/models/*"
-      ]
+    "compilerOptions": {
+        "paths": {
+            "@components/*": [
+                "./src/components/*"
+            ],
+            "@containers/*": [
+                "./src/containers/*"
+            ],
+            "@models/*": [
+                "./src/models/*"
+            ],
+            "@infrastructure/*": [
+                "./src/infrastructure/*"
+            ],
+            "@services/*": [
+                "./src/services/*"
+            ]
+        }
     }
-  }
 }

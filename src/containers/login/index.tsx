@@ -1,16 +1,15 @@
+// Vendor
 import React from 'react';
-import { Input, Form, Row, Col, Button } from "antd"
-import Image from 'next/image'
-import FormInput from "@components/formComponents/input"
-import IconClub from "public/images/logocaulacbo.png";
+import { Input, Form, Row, Col, Button } from 'antd';
+import Image from 'next/image';
 import { LoginOutlined } from '@ant-design/icons';
-import { LoginFormProps } from '@models/form/login';
 import { GoogleLogin } from '@react-oauth/google';
 
+// Src
+import IconClub from 'public/images/logocaulacbo.png';
+import { LoginFormProps } from '@models/form/login';
 
-export type LoginPageProps = {
-
-};
+export type LoginPageProps = {};
 
 const LoginPageContainer: React.FC<LoginPageProps> = () => {
   const [form] = Form.useForm<LoginFormProps>();
@@ -28,12 +27,12 @@ const LoginPageContainer: React.FC<LoginPageProps> = () => {
             </Col>
             <Col span={24}>
               <Form.Item
-                name="username"
-                label="Tên tài khoản"
-                rules={[
-                  { required: true, message: 'Tên tài khoản không được để trống' }
-                ]}
-                required>
+			  name="username"
+			  label="Tên tài khoản"
+			  rules={[
+                  { required: true, message: 'Tên tài khoản không được để trống' },
+			  ]}
+			  required>
                 <Input
                   size="large"
                   placeholder="Số điện thoại / Email"
@@ -42,23 +41,23 @@ const LoginPageContainer: React.FC<LoginPageProps> = () => {
             </Col>
             <Col span={24}>
               <Form.Item
-                name="password"
-                label="Mật khẩu"
-                required
-                rules={[
-                  { required: true, message: 'Mật khẩu không được để trống' }
-                ]}
+			  name="password"
+			  label="Mật khẩu"
+			  required
+			  rules={[
+                  { required: true, message: 'Mật khẩu không được để trống' },
+			  ]}
               >
                 <Input.Password size="large" autoComplete="false" placeholder="Mật khẩu" />
               </Form.Item>
             </Col>
             <Col span={24} className="pt-2">
               <Button
-                type="primary"
-                icon={<LoginOutlined />}
-                htmlType="submit"
-                size="large">
-                Đăng nhập
+			  type="primary"
+			  icon={<LoginOutlined />}
+			  htmlType="submit"
+			  size="large">
+				Đăng nhập
               </Button>
             </Col>
             <Col span={24}>
@@ -70,16 +69,18 @@ const LoginPageContainer: React.FC<LoginPageProps> = () => {
             </Col>
             <Col span={24}>
               <GoogleLogin
-                onSuccess={(...value) => { console.log(value) }}
-                // onError={handleSignInGoogleFailed}
-                size="large"
+			  onSuccess={(...value) => {
+                  console.log(value);
+			  }}
+			  // onError={handleSignInGoogleFailed}
+			  size="large"
               />
             </Col>
           </Row>
         </Form>
       </div>
     </main>
-  )
-}
+  );
+};
 
 export default LoginPageContainer;

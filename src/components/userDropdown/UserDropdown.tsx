@@ -1,12 +1,12 @@
-import React from "react"
+import React from 'react';
 
 export type UserDropdownProps = {}
 
 const UserDropdown: React.FC<UserDropdownProps> = () => {
 
-	return (
-		<></>
-	)
-}
+  return (
+    <></>
+  );
+};
 
-export default UserDropdown
+export default UserDropdown;

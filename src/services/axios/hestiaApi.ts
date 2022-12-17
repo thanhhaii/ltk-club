@@ -1,14 +1,14 @@
 // Vendor
-import axios from "axios"
+import axios from 'axios';
 
 // Src
-import { Config } from "../config/config"
-import AxiosConfig from "./axiosConfig"
+import { Config } from '../config/config';
+import AxiosConfig from './axiosConfig';
 
 const hestiaApi = new AxiosConfig(
-	axios.create({
-		baseURL: Config.BACK_END_URL,
-	}),
-)
+  axios.create({
+	  baseURL: Config.BACK_END_URL,
+  }),
+);
 
-export default hestiaApi
+export default hestiaApi;
