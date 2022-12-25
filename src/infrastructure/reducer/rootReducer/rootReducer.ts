@@ -9,11 +9,14 @@ export const rootSlice = createSlice({
   initialState: initialValue,
   reducers: {
     login: (state: RootServiceProps, action: PayloadAction<RootServiceProps>) => {
-	  return {
+      return {
         ...state,
         ...action.payload,
-	  };
+      };
     },
+    register: (state) => {
+      return state;
+    }
   },
 });
 

@@ -1,5 +1,5 @@
 import type { AppProps } from 'next/app';
-import { useCallback } from 'react';
+import { useCallback, useEffect } from 'react';
 import { NextPage } from 'next';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import { Provider } from 'react-redux';
@@ -11,6 +11,7 @@ import DashboardLayout from '@components/layout/dashboard/DashboardLayout';
 import { persist, store } from '@infrastructure/storage/configurationStore';
 import { PersistGate } from 'redux-persist/integration/react';
 import { Config } from '@services/config/config';
+import 'default-passive-events';
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   emptyLayout?: boolean
@@ -19,6 +20,7 @@ export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
 type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout
 }
+
 
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout = useCallback(() => {
@@ -33,15 +35,19 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
     );
   }, [Component, pageProps]);
 
+  useEffect(() => {
+
+  }, []);
+
   return (
-    <Provider store={store}>
-	  <PersistGate persistor={persist} loading={null}>
-		  <GoogleOAuthProvider
-			  clientId={Config.CLIENT_ID}>
-		  {getLayout()}
-		  </GoogleOAuthProvider>
-	  </PersistGate>
-    </Provider>
+	  <Provider store={store}>
+      <PersistGate persistor={persist} loading={null}>
+        <GoogleOAuthProvider
+          clientId={Config.CLIENT_ID}>
+          {getLayout()}
+        </GoogleOAuthProvider>
+      </PersistGate>
+	  </Provider>
   );
 }
 

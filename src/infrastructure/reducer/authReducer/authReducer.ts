@@ -1,4 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { CredentialResponse } from '@react-oauth/google';
+import { parseToken } from '../../../helpers/utils/tokenUtils';
 
 export type AuthServiceProps = {
   isLogin: boolean
@@ -20,8 +22,18 @@ export const authSlice = createSlice({
         ...action.payload,
 	  };
     },
+    googleLogin: (_, action: PayloadAction<CredentialResponse>) => {
+	  const googleProfile = parseToken(action.payload.credential);
+
+	  return {
+        isLogin: true,
+        googleProfile: googleProfile
+	  };
+    },
   },
 });
+
+export const authAction = authSlice.actions;
 
 const authReducer = authSlice.reducer;
 
